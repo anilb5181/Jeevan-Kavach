@@ -1,17 +1,535 @@
-return;
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jeevan Kavach - Anil Kumar | Insurance & Financial Planning</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-var text =
-"नमस्ते, मुझे Jeevan Kavach से जानकारी चाहिए।\n\n" +
-"नाम: " + name + "\n" +
-"मोबाइल: " + mobile + "\n" +
-"जरूरत: " + need + "\n" +
-"संदेश: " + message;
+body{
+  font-family:Arial,"Noto Sans Devanagari",sans-serif;
+  background:#f5f8fc;
+  color:#172033;
+  line-height:1.6;
+}
 
-window.location.href =
-"https://wa.me/919852622040?text=" +
-encodeURIComponent(text);
+header{
+  background:linear-gradient(135deg,#073b6b,#0b72b9);
+  color:white;
+  padding:18px 16px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 3px 12px rgba(0,0,0,.15);
+}
 
+.header-box{
+  max-width:1000px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:24px;
+  font-weight:bold;
+}
+
+.logo span{
+  display:block;
+  font-size:13px;
+  font-weight:normal;
+  opacity:.9;
+}
+
+.nav-btn{
+  background:white;
+  color:#075a91;
+  padding:9px 14px;
+  border-radius:20px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.hero{
+  background:linear-gradient(135deg,#e8f5ff,#ffffff);
+  padding:55px 18px;
+  text-align:center;
+}
+
+.hero h1{
+  color:#073b6b;
+  font-size:38px;
+  margin-bottom:10px;
+}
+
+.hero h2{
+  color:#0b72b9;
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:17px;
+  color:#4a5568;
+}
+
+.buttons{
+  margin-top:25px;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 22px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.btn-whatsapp{
+  background:#25d366;
+  color:white;
+}
+
+.btn-call{
+  background:#073b6b;
+  color:white;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+  padding:45px 18px;
+}
+
+.section-title{
+  text-align:center;
+  color:#073b6b;
+  font-size:29px;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:white;
+  padding:25px 18px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(0,0,0,.08);
+  border:1px solid #e4edf5;
+}
+
+.icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.card h3{
+  color:#073b6b;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:#5c6778;
+  font-size:14px;
+}
+
+.about{
+  background:#073b6b;
+  color:white;
+}
+
+.about .section-title{
+  color:white;
+}
+
+.about-box{
+  max-width:800px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-box p{
+  font-size:17px;
+}
+
+.highlight{
+  margin-top:25px;
+  background:rgba(255,255,255,.1);
+  padding:20px;
+  border-radius:15px;
+}
+
+.form-section{
+  background:white;
+}
+
+form{
+  max-width:650px;
+  margin:auto;
+  background:#f7fafc;
+  padding:25px;
+  border-radius:18px;
+  box-shadow:0 5px 20px rgba(0,0,0,.07);
+}
+
+label{
+  display:block;
+  margin:12px 0 6px;
+  font-weight:bold;
+  color:#26364a;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ccd7e3;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+.submit{
+  width:100%;
+  margin-top:18px;
+  background:#25d366;
+  color:white;
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.contact{
+  text-align:center;
+  background:#eef6fc;
+}
+
+.contact-box{
+  max-width:650px;
+  margin:auto;
+  background:white;
+  padding:28px;
+  border-radius:18px;
+  box-shadow:0 5px 18px rgba(0,0,0,.07);
+}
+
+.contact-box h3{
+  color:#073b6b;
+  font-size:25px;
+}
+
+.contact-box p{
+  margin:8px 0;
+}
+
+.contact-box a{
+  color:#0b72b9;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+footer{
+  background:#101c2b;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+  font-size:14px;
+}
+
+footer strong{
+  color:#5ec8ff;
+}
+
+.note{
+  margin-top:15px;
+  font-size:12px;
+  color:#b8c4d2;
+}
+
+@media(max-width:600px){
+  .logo{
+    font-size:20px;
+  }
+
+  .nav-btn{
+    font-size:13px;
+    padding:8px 11px;
+  }
+
+  .hero{
+    padding:42px 15px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero h2{
+    font-size:19px;
+  }
+
+  .section-title{
+    font-size:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-box">
+    <div class="logo">
+      🛡️ Jeevan Kavach
+      <span>Anil Kumar | Insurance & Financial Planning</span>
+    </div>
+
+    <a class="nav-btn" href="#contact">संपर्क करें</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>🛡️ जीवन का सुरक्षा कवच</h1>
+
+  <h2>Jeevan Kavach - Anil Kumar</h2>
+
+  <p>
+    आपके और आपके परिवार के बेहतर भविष्य के लिए
+    Insurance एवं Financial Planning की सही जानकारी और मार्गदर्शन।
+  </p>
+
+  <div class="buttons">
+    <a class="btn btn-whatsapp"
+       href="https://wa.me/919852622040?text=नमस्ते%20Anil%20जी,%20मुझे%20Insurance%20और%20Financial%20Planning%20के%20बारे%20में%20जानकारी%20चाहिए।"
+       target="_blank">
+       💬 WhatsApp पर बात करें
+    </a>
+
+    <a class="btn btn-call"
+       href="tel:+919852622040">
+       📞 अभी कॉल करें
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">हम किन जरूरतों में मदद कर सकते हैं?</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Life Insurance</h3>
+      <p>
+        परिवार की आर्थिक सुरक्षा और भविष्य की बेहतर योजना के लिए सही विकल्प।
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎓</div>
+      <h3>बच्चों की शिक्षा</h3>
+      <p>
+        बच्चों के सपनों और उच्च शिक्षा के लिए समय रहते वित्तीय योजना।
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏡</div>
+      <h3>भविष्य की सुरक्षा</h3>
+      <p>
+        परिवार के महत्वपूर्ण लक्ष्यों के लिए व्यवस्थित Financial Planning।
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌅</div>
+      <h3>Retirement Planning</h3>
+      <p>
+        रिटायरमेंट के बाद आर्थिक स्वतंत्रता के लिए पहले से योजना बनाएं।
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="about">
+  <div class="container">
+
+    <h2 class="section-title">Jeevan Kavach क्यों?</h2>
+
+    <div class="about-box">
+      <p>
+        सही समय पर लिया गया सही वित्तीय निर्णय आपके परिवार के भविष्य को
+        मजबूत बना सकता है।
+      </p>
+
+      <div class="highlight">
+        <h3>❤️ आज की छोटी योजना, कल की बड़ी सुरक्षा</h3>
+        <p>
+          आपकी जरूरत, बजट और भविष्य के लक्ष्यों को समझकर
+          उचित Financial Planning के बारे में चर्चा करें।
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="container">
+
+    <h2 class="section-title">WhatsApp पर जानकारी भेजें</h2>
+
+    <form onsubmit="sendWhatsApp(event)">
+
+      <label for="name">आपका नाम</label>
+      <input
+        type="text"
+        id="name"
+        placeholder="अपना नाम लिखें"
+        required>
+
+      <label for="mobile">मोबाइल नंबर</label>
+      <input
+        type="tel"
+        id="mobile"
+        placeholder="मोबाइल नंबर"
+        required>
+
+      <label for="need">आपको किस बारे में जानकारी चाहिए?</label>
+
+      <select id="need" required>
+        <option value="">-- विकल्प चुनें --</option>
+        <option value="Life Insurance">Life Insurance</option>
+        <option value="बच्चों की शिक्षा">बच्चों की शिक्षा</option>
+        <option value="Retirement Planning">Retirement Planning</option>
+        <option value="Financial Planning">Financial Planning</option>
+        <option value="अन्य">अन्य</option>
+      </select>
+
+      <label for="message">आपका संदेश</label>
+
+      <textarea
+        id="message"
+        placeholder="अपनी जरूरत या सवाल लिखें"></textarea>
+
+      <button class="submit" type="submit">
+        💬 WhatsApp पर जानकारी भेजें
+      </button>
+
+    </form>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+
+    <h2 class="section-title">संपर्क करें</h2>
+
+    <div class="contact-box">
+
+      <h3>Anil Kumar</h3>
+
+      <p>🛡️ Jeevan Kavach</p>
+
+      <p>📋 Insurance & Financial Planning</p>
+
+      <p>
+        📱
+        <a href="tel:+919852622040">
+          +91 98526 22040
+        </a>
+      </p>
+
+      <div class="buttons">
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/919852622040?text=नमस्ते%20Anil%20जी,%20मुझे%20आपसे%20Insurance%20के%20बारे%20में%20बात%20करनी%20है।"
+           target="_blank">
+           WhatsApp करें
+        </a>
+
+        <a class="btn btn-call"
+           href="tel:+919852622040">
+           Call करें
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer>
+
+  <p>
+    © 2026 <strong>Jeevan Kavach - Anil Kumar</strong>
+  </p>
+
+  <p>
+    Insurance & Financial Planning
+  </p>
+
+  <p class="note">
+    यह वेबसाइट सामान्य जानकारी एवं संपर्क के उद्देश्य से है।
+    किसी भी वित्तीय निर्णय से पहले अपनी आवश्यकताओं के अनुसार उचित सलाह लें।
+  </p>
+
+</footer>
+
+<script>
+
+function sendWhatsApp(event){
+
+  event.preventDefault();
+
+  var name = document.getElementById("name").value;
+  var mobile = document.getElementById("mobile").value;
+  var need = document.getElementById("need").value;
+  var message = document.getElementById("message").value;
+
+  var text =
+    "नमस्ते Anil जी,%0A%0A" +
+    "नाम: " + name + "%0A" +
+    "मोबाइल: " + mobile + "%0A" +
+    "जरूरत: " + need + "%0A" +
+    "संदेश: " + message;
+
+  window.location.href =
+    "https://wa.me/919852622040?text=" + text;
 }
 
 </script>
