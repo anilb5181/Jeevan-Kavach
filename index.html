@@ -1,5 +1,5 @@
-html = r'''<!doctype html>
-<html lang="hi">
+<!doctype html>
+<html lang="hi"
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -372,10 +372,3 @@ async function shareApp(){
 </script>
 </body>
 </html>
-'''
-
-path = "/mnt/data/index-premium-2.html"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(html)
-
-print(path)
