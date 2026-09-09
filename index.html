@@ -1,1014 +1,381 @@
-<!doctype html>
+html = r'''<!doctype html>
 <html lang="hi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#0b1f3a">
-
-<meta name="description"
-content="जीवन रक्षा कवच — परिवार की वित्तीय सुरक्षा, भविष्य की योजना और financial awareness tools.">
-
+<meta name="description" content="जीवन रक्षा कवच — परिवार की वित्तीय सुरक्षा, भविष्य की योजना और financial awareness tools.">
 <link rel="manifest" href="manifest.webmanifest">
-
 <title>जीवन रक्षा कवच | Anil Kumar</title>
 
 <style>
 :root{
   --navy:#0b1f3a;
+  --navy2:#173b67;
   --gold:#d9b45b;
   --ink:#182230;
   --muted:#667085;
-  --bg:#f5f7fa;
+  --bg:#f4f7fb;
   --card:#fff;
-  --line:#e7eaf0;
+  --line:#e5e9f0;
 }
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;
   background:var(--bg);
   color:var(--ink);
 }
-
 header{
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(11,31,58,.97);
-  color:#fff;
-  padding:14px 18px;
+  position:sticky;top:0;z-index:20;
+  background:rgba(11,31,58,.98);
+  color:#fff;padding:14px 18px;
   box-shadow:0 4px 18px #0002;
 }
-
 .nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:15px;
+  max-width:1100px;margin:auto;display:flex;
+  align-items:center;justify-content:space-between;gap:15px;
 }
-
-.brand{
-  font-weight:800;
-  font-size:20px;
-  color:var(--gold);
-}
-
-.sub{
-  font-size:11px;
-  opacity:.8;
-}
-
-main{
-  max-width:1100px;
-  margin:auto;
-  padding:20px;
-}
-
+.brand{font-weight:800;font-size:20px;color:var(--gold)}
+.sub{font-size:11px;opacity:.8}
+main{max-width:1100px;margin:auto;padding:20px}
 .hero{
-  background:linear-gradient(135deg,#0b1f3a,#173b67);
-  color:#fff;
-  border-radius:26px;
-  padding:28px;
+  background:linear-gradient(135deg,var(--navy),var(--navy2));
+  color:#fff;border-radius:26px;padding:28px;
   box-shadow:0 10px 35px #0b1f3a33;
 }
-
-.shield{
-  font-size:38px;
-}
-
-.hero h1{
-  margin:6px 0;
-  color:var(--gold);
-  font-size:clamp(28px,6vw,44px);
-}
-
-.hero p{
-  max-width:720px;
-  line-height:1.7;
-  color:#edf2f7;
-}
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:18px;
-}
-
+.shield{font-size:38px}
+.hero h1{margin:6px 0;color:var(--gold);font-size:clamp(28px,6vw,44px)}
+.hero p{max-width:720px;line-height:1.7;color:#edf2f7}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:12px 16px;
-  border-radius:12px;
-  border:0;
-  text-decoration:none;
-  font-weight:700;
-  cursor:pointer;
-  background:#fff;
-  color:var(--navy);
-  transition:.25s ease;
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 16px;border-radius:12px;border:0;
+  text-decoration:none;font-weight:700;cursor:pointer;
+  background:#fff;color:var(--navy);transition:.2s ease;
 }
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btn.primary{
-  background:var(--gold);
-  color:#172033;
-}
-
-.btn.dark{
-  background:var(--navy);
-  color:#fff;
-}
-
-.btn.outline{
-  background:transparent;
-  color:#fff;
-  border:1px solid #ffffff55;
-}
-
-h2{
-  margin:30px 0 14px;
-}
-
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--gold);color:#172033}
+.btn.dark{background:var(--navy);color:#fff}
+.btn.outline{background:transparent;color:#fff;border:1px solid #ffffff55}
+h2{margin:30px 0 14px}
 .grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:14px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px
 }
-
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:20px;
-  box-shadow:0 4px 16px #1018280a;
-  transition:.25s ease;
+  background:var(--card);border:1px solid var(--line);border-radius:18px;
+  padding:20px;box-shadow:0 4px 16px #1018280a;transition:.2s ease
 }
-
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 25px #10182818;
-}
-
-.icon{
-  font-size:28px;
-}
-
-.card h3{
-  margin:9px 0 6px;
-}
-
-.card p{
-  color:var(--muted);
-  line-height:1.55;
-  font-size:14px;
-}
-
-/* ================================
-   SMART CALCULATORS
-================================ */
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #10182818}
+.icon{font-size:28px}
+.card h3{margin:9px 0 6px}
+.card p{color:var(--muted);line-height:1.55;font-size:14px}
 
 .tools{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:12px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px
 }
-
 .tool{
-  background:#fff;
-  border:1px solid var(--line);
-  padding:16px;
-  border-radius:15px;
-  box-shadow:0 4px 16px #1018280a;
+  background:#fff;border:1px solid var(--line);padding:16px;
+  border-radius:15px;box-shadow:0 4px 16px #1018280a
 }
-
 .tool input{
-  width:100%;
-  padding:10px;
-  margin:6px 0 10px;
-  border:1px solid #d6dae2;
-  border-radius:9px;
-  font-size:14px;
+  width:100%;padding:10px;margin:6px 0 10px;
+  border:1px solid #d6dae2;border-radius:9px;font-size:14px
 }
+.result{font-weight:800;color:var(--navy)}
 
-.result{
-  font-weight:800;
-  color:var(--navy);
-}
-
-/* =========================================
-   PREMIUM FINANCIAL SAFETY TOOLS
-========================================= */
-
+/* PREMIUM SAFETY TOOLS */
 .safety-tools{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:16px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
 }
-
-/* Base highlighted card */
-
 .safety-card{
   position:relative;
   overflow:hidden;
-  min-height:185px;
-  padding:21px;
+  min-height:176px;
+  padding:18px;
   border-radius:22px;
-  border:1px solid rgba(255,255,255,.8);
-  box-shadow:0 7px 22px rgba(16,24,40,.08);
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease;
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 7px 22px rgba(16,24,40,.07);
+  transition:transform .22s ease,box-shadow .22s ease;
 }
-
 .safety-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 14px 30px rgba(16,24,40,.13);
+  transform:translateY(-4px);
+  box-shadow:0 14px 30px rgba(16,24,40,.12);
 }
-
-/* Soft background glow */
-
 .safety-card::before{
   content:"";
   position:absolute;
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  right:-45px;
-  top:-45px;
-  background:rgba(255,255,255,.42);
-  filter:blur(3px);
+  width:145px;height:145px;border-radius:50%;
+  right:-45px;top:-45px;
+  background:rgba(255,255,255,.46);
 }
-
 .safety-card::after{
   content:"";
   position:absolute;
-  width:90px;
-  height:90px;
-  border-radius:50%;
-  left:-35px;
-  bottom:-35px;
+  width:85px;height:85px;border-radius:50%;
+  left:-35px;bottom:-35px;
   background:rgba(255,255,255,.30);
 }
-
-/* Individual backgrounds */
-
-.safety-blue{
-  background:linear-gradient(135deg,#e9f3ff,#f8fbff);
-}
-
-.safety-indigo{
-  background:linear-gradient(135deg,#eef0ff,#fafaff);
-}
-
-.safety-purple{
-  background:linear-gradient(135deg,#f3edff,#fcfaff);
-}
-
-.safety-gold{
-  background:linear-gradient(135deg,#fff6dc,#fffdf6);
-}
-
-.safety-green{
-  background:linear-gradient(135deg,#eaf9f0,#fbfffc);
-}
-
-.safety-teal{
-  background:linear-gradient(135deg,#e7f8f7,#faffff);
-}
-
-.safety-orange{
-  background:linear-gradient(135deg,#fff0e4,#fffaf6);
-}
-
-.safety-pink{
-  background:linear-gradient(135deg,#fff0f4,#fffafd);
-}
-
-.safety-navy{
-  background:linear-gradient(135deg,#e8f0fa,#f9fbff);
-}
-
-/* Tool icon */
+.safety-blue{background:linear-gradient(135deg,#e7f2ff,#f9fcff)}
+.safety-indigo{background:linear-gradient(135deg,#eceeff,#fbfbff)}
+.safety-purple{background:linear-gradient(135deg,#f1eaff,#fdfaff)}
+.safety-gold{background:linear-gradient(135deg,#fff4d4,#fffdf7)}
+.safety-green{background:linear-gradient(135deg,#e7f8ee,#fbfffc)}
+.safety-teal{background:linear-gradient(135deg,#e3f7f6,#fbffff)}
+.safety-orange{background:linear-gradient(135deg,#ffefe1,#fffaf6)}
+.safety-pink{background:linear-gradient(135deg,#ffedf3,#fffafd)}
+.safety-navy{background:linear-gradient(135deg,#e6eff9,#f9fbff)}
 
 .safety-icon{
-  position:relative;
-  z-index:1;
-  width:48px;
-  height:48px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:15px;
-  background:rgba(255,255,255,.72);
-  font-size:25px;
-  box-shadow:0 3px 10px rgba(16,24,40,.08);
+  position:relative;z-index:1;
+  width:46px;height:46px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:14px;
+  background:rgba(255,255,255,.78);
+  font-size:24px;
+  box-shadow:0 3px 10px rgba(16,24,40,.07);
 }
-
 .safety-card h3{
-  position:relative;
-  z-index:1;
-  margin:13px 0 7px;
-  font-size:18px;
-  color:#182230;
+  position:relative;z-index:1;
+  margin:11px 0 5px;font-size:17px
 }
-
 .safety-card p{
-  position:relative;
-  z-index:1;
-  margin:0 0 15px;
-  color:#667085;
-  line-height:1.55;
-  font-size:13px;
+  position:relative;z-index:1;
+  margin:0 0 12px;color:#667085;
+  line-height:1.48;font-size:13px
 }
-
 .safety-cta{
-  position:relative;
-  z-index:1;
-  display:inline-flex;
-  align-items:center;
-  gap:5px;
-  padding:8px 12px;
-  border-radius:9px;
-  background:rgba(11,31,58,.94);
-  color:#fff;
-  text-decoration:none;
-  font-size:12px;
-  font-weight:700;
-  transition:.2s ease;
+  position:relative;z-index:1;
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:142px;
+  padding:9px 12px;border-radius:10px;
+  background:rgba(11,31,58,.94);color:#fff;
+  text-decoration:none;font-size:12px;font-weight:750;
+  transition:.2s ease
 }
+.safety-cta:hover{background:#173b67;transform:translateX(2px)}
 
-.safety-cta:hover{
-  transform:translateX(2px);
-  background:#173b67;
-}
-
-/* =========================================
-   PROFILE
-========================================= */
-
-.profile{
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:16px;
-}
-
+.profile{display:grid;grid-template-columns:1fr 2fr;gap:16px}
 .profile>div{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:20px;
+  background:#fff;border:1px solid var(--line);
+  border-radius:18px;padding:20px
 }
-
-/* =========================================
-   MOBILE
-========================================= */
+footer{
+  max-width:1100px;margin:25px auto;padding:20px;
+  color:#667085;font-size:12px;line-height:1.6;
+  border-top:1px solid var(--line)
+}
 
 @media(max-width:650px){
-
-  main{
-    padding:12px;
-  }
-
-  .profile{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding:22px;
-  }
-
-  .btn{
-    flex:1;
-    min-width:135px;
-  }
-
-  .safety-tools{
-    grid-template-columns:1fr;
-    gap:13px;
-  }
-
-  .safety-card{
-    min-height:170px;
-    padding:19px;
-  }
-
-  .safety-card h3{
-    font-size:18px;
-  }
-
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-
-footer{
-  max-width:1100px;
-  margin:25px auto;
-  padding:20px;
-  color:#667085;
-  font-size:12px;
-  line-height:1.6;
-  border-top:1px solid var(--line);
+  main{padding:12px}
+  .profile{grid-template-columns:1fr}
+  .hero{padding:22px}
+  .btn{flex:1;min-width:135px}
+  .safety-tools{grid-template-columns:1fr;gap:12px}
+  .safety-card{min-height:164px;padding:18px}
+  .safety-card h3{font-size:18px}
+  .safety-cta{min-width:145px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
   <div class="nav">
-
     <div>
       <div class="brand">🛡️ जीवन रक्षा कवच</div>
-      <div class="sub">
-        Family Financial Safety & Future Planning
-      </div>
+      <div class="sub">Family Financial Safety & Future Planning</div>
     </div>
-
-    <button class="btn" onclick="shareApp()">
-      ↗ Share
-    </button>
-
+    <button class="btn" onclick="shareApp()">↗ Share</button>
   </div>
 </header>
 
-
 <main>
-
-<!-- ================= HERO ================= -->
-
 <section class="hero">
-
   <div class="shield">🛡️</div>
-
   <h1>जीवन रक्षा कवच</h1>
-
   <p>
-    हर परिवार सिर्फ आज के लिए नहीं जीता—वह अपने आने वाले कल के लिए भी
-    सपने देखता है। परिवार की सुरक्षा, बच्चों के भविष्य, बचत और retirement
-    planning को एक जगह समझने और व्यवस्थित करने के लिए यह digital platform
-    बनाया गया है।
+    हर परिवार सिर्फ आज के लिए नहीं जीता—वह अपने आने वाले कल के लिए भी सपने देखता है।
+    परिवार की सुरक्षा, बच्चों के भविष्य, बचत और retirement planning को एक जगह समझने
+    और व्यवस्थित करने के लिए यह digital platform बनाया गया है।
   </p>
-
   <div class="actions">
-
-    <a class="btn primary"
-       href="https://wa.me/919852622040">
-       💬 WhatsApp
-    </a>
-
-    <a class="btn"
-       href="tel:+919852622040">
-       📞 Call
-    </a>
-
-    <a class="btn outline"
-       href="https://anilb5181.github.io/Jeevan-Kavach/">
-       🌐 Website
-    </a>
-
+    <a class="btn primary" href="https://wa.me/919852622040">💬 WhatsApp</a>
+    <a class="btn" href="tel:+919852622040">📞 Call</a>
+    <a class="btn outline" href="https://anilb5181.github.io/Jeevan-Kavach/">🌐 Website</a>
   </div>
-
 </section>
-
-
-<!-- ================= FAMILY ================= -->
 
 <h2>आपके परिवार के लिए</h2>
-
 <section class="grid">
-
-  <div class="card">
-    <div class="icon">🛡️</div>
-    <h3>Family Financial Protection</h3>
-    <p>
-      परिवार की आय, जिम्मेदारियों और सुरक्षा जरूरतों का structured review करें।
-    </p>
-  </div>
-
-  <div class="card">
-    <div class="icon">🎓</div>
-    <h3>Children’s Future Planning</h3>
-    <p>
-      बच्चों की शिक्षा और भविष्य के लक्ष्यों के लिए समय पर planning करें।
-    </p>
-  </div>
-
-  <div class="card">
-    <div class="icon">💰</div>
-    <h3>Savings & Goals</h3>
-    <p>
-      बचत और long-term financial goals को स्पष्ट और व्यवस्थित करें।
-    </p>
-  </div>
-
-  <div class="card">
-    <div class="icon">🌅</div>
-    <h3>Retirement Planning</h3>
-    <p>
-      रिटायरमेंट के बाद की संभावित जरूरतों के लिए पहले से तैयारी करें।
-    </p>
-  </div>
-
-  <div class="card">
-    <div class="icon">📋</div>
-    <h3>Insurance Planning</h3>
-    <p>
-      Insurance needs और policy portfolio को awareness के साथ review करें।
-    </p>
-  </div>
-
+  <div class="card"><div class="icon">🛡️</div><h3>Family Financial Protection</h3><p>परिवार की आय, जिम्मेदारियों और सुरक्षा जरूरतों का structured review करें।</p></div>
+  <div class="card"><div class="icon">🎓</div><h3>Children’s Future Planning</h3><p>बच्चों की शिक्षा और भविष्य के लक्ष्यों के लिए समय पर planning करें।</p></div>
+  <div class="card"><div class="icon">💰</div><h3>Savings & Goals</h3><p>बचत और long-term financial goals को स्पष्ट और व्यवस्थित करें।</p></div>
+  <div class="card"><div class="icon">🌅</div><h3>Retirement Planning</h3><p>रिटायरमेंट के बाद की संभावित जरूरतों के लिए पहले से तैयारी करें।</p></div>
+  <div class="card"><div class="icon">📋</div><h3>Insurance Planning</h3><p>Insurance needs और policy portfolio को awareness के साथ review करें।</p></div>
 </section>
-
-
-<!-- ================= CALCULATORS ================= -->
 
 <h2>Smart Calculators</h2>
-
 <section class="tools">
-
   <div class="tool">
-
     <b>💰 Savings Calculator</b>
-
-    <input
-      id="sip"
-      type="number"
-      placeholder="Monthly saving ₹">
-
-    <input
-      id="rate"
-      type="number"
-      placeholder="Annual return %">
-
-    <input
-      id="years"
-      type="number"
-      placeholder="Years">
-
-    <button
-      class="btn dark"
-      onclick="calcSavings()">
-      Calculate
-    </button>
-
-    <p
-      class="result"
-      id="savRes">
-    </p>
-
+    <input id="sip" type="number" placeholder="Monthly saving ₹">
+    <input id="rate" type="number" placeholder="Annual return %">
+    <input id="years" type="number" placeholder="Years">
+    <button class="btn dark" onclick="calcSavings()">Calculate</button>
+    <p class="result" id="savRes"></p>
   </div>
-
-
   <div class="tool">
-
     <b>🛡️ Protection Estimate</b>
-
-    <input
-      id="income"
-      type="number"
-      placeholder="Annual income ₹">
-
-    <input
-      id="depend"
-      type="number"
-      placeholder="Years of income">
-
-    <button
-      class="btn dark"
-      onclick="calcProtection()">
-      Estimate
-    </button>
-
-    <p
-      class="result"
-      id="proRes">
-    </p>
-
+    <input id="income" type="number" placeholder="Annual income ₹">
+    <input id="depend" type="number" placeholder="Years of income">
+    <button class="btn dark" onclick="calcProtection()">Estimate</button>
+    <p class="result" id="proRes"></p>
   </div>
-
-
   <div class="tool">
-
     <b>🌅 Retirement Estimate</b>
-
-    <input
-      id="monthly"
-      type="number"
-      placeholder="Current monthly expense ₹">
-
-    <input
-      id="infl"
-      type="number"
-      placeholder="Inflation %">
-
-    <input
-      id="retYears"
-      type="number"
-      placeholder="Years to retirement">
-
-    <button
-      class="btn dark"
-      onclick="calcRetirement()">
-      Estimate
-    </button>
-
-    <p
-      class="result"
-      id="retRes">
-    </p>
-
+    <input id="monthly" type="number" placeholder="Current monthly expense ₹">
+    <input id="infl" type="number" placeholder="Inflation %">
+    <input id="retYears" type="number" placeholder="Years to retirement">
+    <button class="btn dark" onclick="calcRetirement()">Estimate</button>
+    <p class="result" id="retRes"></p>
   </div>
-
 </section>
-
-
-<!-- ==========================================
-     PREMIUM FINANCIAL SAFETY TOOLS
-=========================================== -->
 
 <h2>आपके Financial Safety Tools</h2>
-
 <section class="safety-tools">
 
-
-  <!-- 1 -->
-
   <div class="safety-card safety-blue">
-
     <div class="safety-icon">🛡️</div>
-
-    <h3>
-      Family Financial Safety
-    </h3>
-
-    <p>
-      परिवार की basic financial safety checklist.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Family%20Financial%20Safety%20ke%20baare%20mein%20planning%20karni%20hai.">
-      Safety Check करें →
-    </a>
-
+    <h3>Family Financial Safety</h3>
+    <p>परिवार की basic financial safety checklist.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Family%20Financial%20Safety%20ke%20baare%20mein%20planning%20karni%20hai.">Safety Check करें →</a>
   </div>
-
-
-  <!-- 2 -->
 
   <div class="safety-card safety-indigo">
-
     <div class="safety-icon">❤️</div>
-
-    <h3>
-      Life Cover Calculator
-    </h3>
-
-    <p>
-      आय और जिम्मेदारियों के आधार पर awareness estimate.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Life%20Cover%20Calculator%20ke%20baare%20mein%20jaanna%20hai.">
-      Calculate करें →
-    </a>
-
+    <h3>Life Cover Calculator</h3>
+    <p>आय और जिम्मेदारियों के आधार पर awareness estimate.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Life%20Cover%20Calculator%20ke%20baare%20mein%20jaanna%20hai.">Calculate करें →</a>
   </div>
-
-
-  <!-- 3 -->
 
   <div class="safety-card safety-purple">
-
     <div class="safety-icon">🔎</div>
-
-    <h3>
-      Insurance Gap Check
-    </h3>
-
-    <p>
-      Existing protection और estimated need का comparison.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Insurance%20Gap%20Check%20karwana%20hai.">
-      Gap Check करें →
-    </a>
-
+    <h3>Insurance Gap Check</h3>
+    <p>Existing protection और estimated need का comparison.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Insurance%20Gap%20Check%20karwana%20hai.">Gap Check करें →</a>
   </div>
-
-
-  <!-- 4 -->
 
   <div class="safety-card safety-gold">
-
     <div class="safety-icon">🎓</div>
-
-    <h3>
-      Child Education Planner
-    </h3>
-
-    <p>
-      Education goal के लिए planning inputs.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Child%20Education%20Planning%20ke%20baare%20mein%20jaanna%20hai.">
-      Planning शुरू करें →
-    </a>
-
+    <h3>Child Education Planner</h3>
+    <p>Education goal के लिए planning inputs.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Child%20Education%20Planning%20ke%20baare%20mein%20jaanna%20hai.">Planning शुरू करें →</a>
   </div>
-
-
-  <!-- 5 -->
 
   <div class="safety-card safety-orange">
-
     <div class="safety-icon">💍</div>
-
-    <h3>
-      Child Marriage Planner
-    </h3>
-
-    <p>
-      Long-term goal planning awareness.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Child%20Future%20Goal%20Planning%20ke%20baare%20mein%20jaanna%20hai.">
-      Planning शुरू करें →
-    </a>
-
+    <h3>Child Marriage Planner</h3>
+    <p>Long-term goal planning awareness.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Child%20Future%20Goal%20Planning%20ke%20baare%20mein%20jaanna%20hai.">Planning शुरू करें →</a>
   </div>
-
-
-  <!-- 6 -->
 
   <div class="safety-card safety-green">
-
     <div class="safety-icon">📈</div>
-
-    <h3>
-      Inflation Calculator
-    </h3>
-
-    <p>
-      महंगाई के संभावित प्रभाव को समझें.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Inflation%20Calculator%20ke%20baare%20mein%20jaanna%20hai.">
-      Calculate करें →
-    </a>
-
+    <h3>Inflation Calculator</h3>
+    <p>महंगाई के संभावित प्रभाव को समझें.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Inflation%20Calculator%20ke%20baare%20mein%20jaanna%20hai.">Calculate करें →</a>
   </div>
-
-
-  <!-- 7 -->
 
   <div class="safety-card safety-teal">
-
     <div class="safety-icon">💼</div>
-
-    <h3>
-      Family Income Protection
-    </h3>
-
-    <p>
-      Income continuity के बारे में awareness.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Family%20Income%20Protection%20ke%20baare%20mein%20jaanna%20hai.">
-      Protection देखें →
-    </a>
-
+    <h3>Family Income Protection</h3>
+    <p>Income continuity के बारे में awareness.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Family%20Income%20Protection%20ke%20baare%20mein%20jaanna%20hai.">Protection देखें →</a>
   </div>
-
-
-  <!-- 8 -->
 
   <div class="safety-card safety-navy">
-
     <div class="safety-icon">📋</div>
-
-    <h3>
-      Policy Portfolio Audit
-    </h3>
-
-    <p>
-      अपनी policies को एक जगह review करने की checklist.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Policy%20Portfolio%20Audit%20ke%20baare%20mein%20jaanna%20hai.">
-      Review शुरू करें →
-    </a>
-
+    <h3>Policy Portfolio Audit</h3>
+    <p>अपनी policies को एक जगह review करने की checklist.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%20Policy%20Portfolio%20Audit%20ke%20baare%20mein%20jaanna%20hai.">Review शुरू करें →</a>
   </div>
-
-
-  <!-- 9 -->
 
   <div class="safety-card safety-pink">
-
     <div class="safety-icon">⏱️</div>
-
-    <h3>
-      10-Minute Financial Safety Audit
-    </h3>
-
-    <p>
-      एक quick family financial review.
-    </p>
-
-    <a
-      class="safety-cta"
-      href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%2010-Minute%20Financial%20Safety%20Audit%20karwana%20hai.">
-      Audit शुरू करें →
-    </a>
-
+    <h3>10-Minute Financial Safety Audit</h3>
+    <p>एक quick family financial review.</p>
+    <a class="safety-cta" href="https://wa.me/919852622040?text=Namaste%2C%20mujhe%2010-Minute%20Financial%20Safety%20Audit%20karwana%20hai.">Audit शुरू करें →</a>
   </div>
 
-
 </section>
-
-
-<!-- ================= ABOUT ================= -->
 
 <h2>About</h2>
-
 <section class="profile">
-
   <div>
-
     <div class="icon">👨‍💼</div>
-
     <h3>Anil Kumar</h3>
-
-    <p>
-      Jeevan Raksha Kavach
-    </p>
-
-    <a
-      class="btn primary"
-      href="https://wa.me/919852622040">
-      Contact on WhatsApp
-    </a>
-
+    <p>Jeevan Raksha Kavach</p>
+    <a class="btn primary" href="https://wa.me/919852622040">Contact on WhatsApp</a>
   </div>
-
-
   <div>
-
     <h3>हमारा उद्देश्य</h3>
-
-    <p>
-      परिवारों को financial protection, insurance awareness,
-      savings और future planning को सरल भाषा में समझने में
-      मदद करना।
-    </p>
-
-    <p>
-      <b>याद रखें:</b>
-      अपनों के लिए कमाना जिम्मेदारी है—लेकिन उनके भविष्य को
-      सुरक्षित करने की तैयारी समझदारी है।
-    </p>
-
+    <p>परिवारों को financial protection, insurance awareness, savings और future planning को सरल भाषा में समझने में मदद करना।</p>
+    <p><b>याद रखें:</b> अपनों के लिए कमाना जिम्मेदारी है—लेकिन उनके भविष्य को सुरक्षित करने की तैयारी समझदारी है।</p>
   </div>
-
 </section>
-
 </main>
 
-
-<!-- ================= FOOTER ================= -->
-
 <footer>
-
-महत्वपूर्ण सूचना: यह platform सामान्य वित्तीय जागरूकता और
-planning assistance के लिए है। Calculators के परिणाम illustrative हैं।
-वास्तविक premium, benefits, policy terms और insurance requirement
-संबंधित उत्पाद, दस्तावेज़ और eligibility पर निर्भर करती है।
-यह आधिकारिक LIC app/website नहीं है।
-
+महत्वपूर्ण सूचना: यह platform सामान्य वित्तीय जागरूकता और planning assistance के लिए है।
+Calculators के परिणाम illustrative हैं। वास्तविक premium, benefits, policy terms और insurance
+requirement संबंधित उत्पाद, दस्तावेज़ और eligibility पर निर्भर करती है। यह आधिकारिक LIC app/website नहीं है।
 </footer>
 
-
 <script>
-
-function n(id){
-  return Math.max(
-    0,
-    Number(document.getElementById(id).value) || 0
-  );
-}
-
-
-function money(x){
-  return "₹" + Math.round(x).toLocaleString("en-IN");
-}
-
-
-/* Savings Calculator */
+function n(id){return Math.max(0,Number(document.getElementById(id).value)||0)}
+function money(x){return "₹"+Math.round(x).toLocaleString("en-IN")}
 
 function calcSavings(){
-
-  let p = n("sip");
-  let r = n("rate") / 1200;
-  let y = n("years") * 12;
-
-  let fv = r
-    ? p * ((Math.pow(1+r,y)-1)/r) * (1+r)
-    : p*y;
-
-  document.getElementById("savRes").textContent =
-    "Illustrative value: " + money(fv);
+  let p=n("sip"),r=n("rate")/1200,y=n("years")*12;
+  let fv=r?p*((Math.pow(1+r,y)-1)/r)*(1+r):p*y;
+  document.getElementById("savRes").textContent="Illustrative value: "+money(fv);
 }
-
-
-/* Protection Estimate */
 
 function calcProtection(){
-
-  let v =
-    n("income") *
-    n("depend");
-
-  document.getElementById("proRes").textContent =
-    "Illustrative protection estimate: " +
-    money(v);
+  let v=n("income")*n("depend");
+  document.getElementById("proRes").textContent="Illustrative protection estimate: "+money(v);
 }
-
-
-/* Retirement Estimate */
 
 function calcRetirement(){
-
-  let m = n("monthly");
-  let i = n("infl") / 100;
-  let y = n("retYears");
-
-  let v =
-    m * Math.pow(1+i,y);
-
-  document.getElementById("retRes").textContent =
-    "Future monthly expense estimate: " +
-    money(v);
+  let m=n("monthly"),i=n("infl")/100,y=n("retYears");
+  let v=m*Math.pow(1+i,y);
+  document.getElementById("retRes").textContent="Future monthly expense estimate: "+money(v);
 }
 
-
-/* Share */
-
 async function shareApp(){
-
   if(navigator.share){
-
     try{
-
       await navigator.share({
         title:"जीवन रक्षा कवच",
         text:"Family financial safety & future planning",
         url:location.href
       });
-
     }catch(e){}
-
   }else{
-
-    alert(
-      "इस browser में Share सुविधा उपलब्ध नहीं है।"
-    );
-
+    alert("इस browser में Share सुविधा उपलब्ध नहीं है।");
   }
-
 }
-
 </script>
-
 </body>
 </html>
+'''
+
+path = "/mnt/data/index-premium-2.html"
+with open(path, "w", encoding="utf-8") as f:
+    f.write(html)
+
+print(path)
