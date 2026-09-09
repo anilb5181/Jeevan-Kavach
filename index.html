@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="hi"
+<html lang="hi">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -64,13 +64,28 @@ h2{margin:30px 0 14px}
   display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px
 }
 .card{
-  background:var(--card);border:1px solid var(--line);border-radius:18px;
-  padding:20px;box-shadow:0 4px 16px #1018280a;transition:.2s ease
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#eef6ff,#ffffff);
+  border:1px solid rgba(255,255,255,.95);border-radius:20px;
+  padding:20px;box-shadow:0 7px 22px rgba(16,24,40,.07);transition:.2s ease
 }
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #10182818}
-.icon{font-size:28px}
+.card::before{
+  content:"";position:absolute;width:130px;height:130px;border-radius:50%;
+  right:-42px;top:-42px;background:rgba(255,255,255,.48)
+}
+.card::after{
+  content:"";position:absolute;width:75px;height:75px;border-radius:50%;
+  left:-30px;bottom:-30px;background:rgba(255,255,255,.30)
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(16,24,40,.12)}
+.card .icon,.card h3,.card p{position:relative;z-index:1}
 .card h3{margin:9px 0 6px}
-.card p{color:var(--muted);line-height:1.55;font-size:14px}
+.card p{color:#5f6b7a;line-height:1.55;font-size:14px}
+.card:nth-child(1){background:linear-gradient(135deg,#e8f2ff,#f8fbff)}
+.card:nth-child(2){background:linear-gradient(135deg,#eeeaff,#fbfaff)}
+.card:nth-child(3){background:linear-gradient(135deg,#fff1d1,#fffaf0)}
+.card:nth-child(4){background:linear-gradient(135deg,#e5f7ed,#f9fffb)}
+.card:nth-child(5){background:linear-gradient(135deg,#e4f6f5,#f9ffff)}
 
 .tools{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px
