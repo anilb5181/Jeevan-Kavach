@@ -1,0 +1,9 @@
+{
+  "name":"जीवन रक्षा कवच",
+  "short_name":"जीवन रक्षा कवच",
+  "start_url":".",
+  "display":"standalone",
+  "background_color":"#f5f7fa",
+  "theme_color":"#0b1f3a",
+  "description":"Family financial safety and future planning platform"
+}
